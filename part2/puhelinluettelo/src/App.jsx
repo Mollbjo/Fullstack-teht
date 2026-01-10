@@ -64,7 +64,9 @@ const App = () => {
     const alreadyAddedPerson = persons.find(person => person.name === newName)
 
     if (persons.find(person => person.name === newName)) {
-      window.confirm(`${newName} on jo luettelossa, korvataanko vanha numero?`)
+      if (!window.confirm(`${newName} on jo luettelossa, korvataanko vanha numero?`)) {
+        return
+      }
       const updatedPerson = { ...alreadyAddedPerson, number: newNumber}
 
       personsService
@@ -108,6 +110,9 @@ const App = () => {
         setTimeout(() => {
           setNotification(null)
         }, 5000)
+      })
+      .catch(error => {
+        console.log(error.response.data)
       })
   }
 
