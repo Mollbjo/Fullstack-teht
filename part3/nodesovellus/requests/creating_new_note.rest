@@ -1,7 +1,7 @@
-POST http://localhost:3001/api/persons
+POST https://fullstack-teht.onrender.com/api/persons
 content-type: application/json
 
 {
-    "name": "Seppo Taalasmaa",
-    "number": "123-428745"
+    "name": "Arto Hellas",
+    "number": "040-123456"
 }
